@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Classical World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color:rgb(103, 98, 235);
+            --secondary-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation (keeping your existing nav style) */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* About Page Specific Styles */
+        .about-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/media/about-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">The Classical World</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Header -->
+    <div class="about-header">
+        <h1>About The Classical World</h1>
+        <p>Bringing Music to Life Since 2015</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="about-content">
+        <!-- Our Story Section -->
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>Founded in 2015, The Classical World has been at the forefront of providing quality musical instruments to musicians of all levels. Our journey began with a simple passion for music and has grown into a commitment to delivering excellence in every instrument we offer.</p>
+        </div>
+
+        <!-- Our Mission Section -->
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>We strive to inspire and enable musicians by providing high-quality instruments, expert guidance, and outstanding customer service. Our goal is to be your trusted partner in your musical journey.</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <p>Instruments</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50k+</div>
+                    <p>Happy Customers</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Team Section -->
+        <div class="about-section">
+            <h2>Our Team</h2>
+            <p>Meet the passionate individuals who make The Classical World special.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/media/team1.jpg" alt="Team Member">
+                    <h3>Bishal Shrestha</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="/media/team2.jpg" alt="Team Member">
+                    <h3>Bhim Bahadur Nakarmi</h3>
+                    <p>Music Expert</p>
+                </div>
+                <div class="team-member">
+                    <img src="/media/team3.jpg" alt="Team Member">
+                    <h3>Santa Das Shrestha</h3>
+                    <p>Customer Service Head</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
