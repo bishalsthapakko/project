@@ -1,35 +1,167 @@
-{% block title %}Contact Us{% endblock title %}
 
-{% block body %}
-    <h1>Contact Us</h1>
-    <p>We're here to help! If you have any questions, concerns, or feedback, please don't hesitate to reach out to us. Our team is ready to assist you.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <title>{% block title %}Contact Us{% endblock title %}</title> {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a4e69;
+            --secondary-color: #9a8c98;
+            --hover-color: #c9ada7;
+            --text-color: #f2e9e4;
+        }
 
-    <h2>Customer Support</h2>
-    <p>Our customer support team is available to assist you with any inquiries. You can reach us via email, phone, or by visiting our office during business hours.</p>
-    <ul>
-        <li><strong>Email:</strong> vishalstha78@gmail.com</li>
-        <li><strong>Phone:</strong> 9768411302</li>
-        <li><strong>Address:</strong> Shankharapur-7,Salkha Tole</li>
-    </ul>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <h2>Business Hours</h2>
-    <p>Our office is open Monday through Friday, from 9:00 AM to 6:00 PM. We are closed on weekends and public holidays.</p>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
 
-    <h2>Feedback Form</h2>
-    <p>If you'd like to send us a message, please fill out the form below. We'll get back to you as soon as possible.</p>
-    <form action="/submit-feedback" method="post">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            color: var(--text-color);
+            font-size: 1.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: var(--hover-color);
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--hover-color);
+        }
+
+        .btn-outline-success {
+            color: var(--hover-color);
+            border-color: var(--hover-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-success:hover {
+            background-color: var(--hover-color);
+            color: white;
+            border-color: var(--hover-color);
+        }
+
+        /* Search Bar */
+        .form-control {
+            border-radius: 20px;
+            border: 1px solid var(--secondary-color);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px var(--hover-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .nav-link {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">The Classical World</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/instruments">Instruments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-    {% endblock body %}
+    </nav>
+
+    <!-- Contact Page Content -->
+    <div class="container my-5">
+        <h1>Contact Us</h1>
+        <p>We're here to help! If you have any questions, concerns, or feedback, please don't hesitate to reach out to us. Our team is ready to assist you.</p>
+
+        <h2>Customer Support</h2>
+        <p>Our customer support team is available to assist you with any inquiries. You can reach us via email, phone, or by visiting our office during business hours.</p>
+        <ul>
+            <li><strong>Email:</strong> vishalstha78@gmail.com</li>
+            <li><strong>Phone:</strong> 9768411302</li>
+            <li><strong>Address:</strong> Shankharapur-7, Salkha Tole</li>
+        </ul>
+
+        <h2>Business Hours</h2>
+        <p>Our office is open Monday through Friday, from 9:00 AM to 6:00 PM. We are closed on weekends and public holidays.</p>
+
+        <h2>Feedback Form</h2>
+        <p>If you'd like to send us a message, please fill out the form below. We'll get back to you as soon as possible.</p>
+        <form action="/submit-feedback" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
