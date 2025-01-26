@@ -14,8 +14,15 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+
+# views.py
 def instruments(request):
-    return render(request, 'instruments.html')
+    instruments = Storeinstruments.objects.all().order_by('-created_at')
+    context = {
+        'instruments': instruments
+    }
+    return render(request, 'instruments.html', context)
+
 
 def contact(request):
     return render(request, 'contact.html')

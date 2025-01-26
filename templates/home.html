@@ -71,27 +71,89 @@
             border-color: var(--hover-color);
         }
 
-        /* Search Bar */
-        .form-control {
-            border-radius: 20px;
-            border: 1px solid var(--secondary-color);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: border 0.3s ease;
+        /* Offers Section */
+        .offers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
         }
 
-        .form-control:focus {
-            border-color: var(--hover-color);
-            box-shadow: 0 0 5px var(--hover-color);
+        .offer-card {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .offer-card p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .offer-card .offer-btn {
+            margin-top: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .offer-card .offer-btn:hover {
+            background-color: var(--hover-color);
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+            color: black; /* This will change the text color to black */
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* Image Section */
+        .image-section {
+            width: 100%;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .navbar-nav {
-                text-align: center;
+            .offers {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .nav-link {
-                margin: 5px 0;
+            .offer-card {
+                width: 80%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -126,8 +188,34 @@
         </div>
     </nav>
 
-    <div class="gallery" id="imageGallery">
-        <img src="/static/insset.jpg" alt="1">
+    <!-- Image Section -->
+    <div class="image-section">
+        <img src="/static/insset.jpg" alt="Musical Instrument">
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Discover the Beauty of Musical Instruments</h2>
+        <p>Musical instruments have been an integral part of human culture for thousands of years. From string instruments like the violin to percussion instruments like the drums, each one has a unique sound that enhances the beauty of music. Whether you're a musician or a collector, these instruments bring timeless joy and harmony to the world.</p>
+    </div>
+
+    <!-- Offers Section -->
+    <div class="offers">
+        <div class="offer-card">
+            <h4>10% Off First Purchase</h4>
+            <p>Get 10% off your first instrument purchase! Join our community today and experience the finest musical instruments.</p>
+            <button class="offer-btn">Claim Offer</button>
+        </div>
+        <div class="offer-card">
+            <h4>Free Shipping on Orders Over $500</h4>
+            <p>Enjoy free shipping when you spend over $500. Get your musical instruments delivered right to your doorstep.</p>
+            <button class="offer-btn">Shop Now</button>
+        </div>
+        <div class="offer-card">
+            <h4>Buy One, Get One 20% Off</h4>
+            <p>Take advantage of our Buy One, Get One 20% Off offer. Perfect for those looking to expand their collection.</p>
+            <button class="offer-btn">Grab the Deal</button>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
