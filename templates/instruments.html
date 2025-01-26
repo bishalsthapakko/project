@@ -1,154 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instruments</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #4a4e69;
-            --secondary-color: #9a8c98;
-            --hover-color: #c9ada7;
-            --text-color: #f2e9e4;
-        }
+{% extends "base.html" %}
+{% block title %}Shopping Cart{% endblock title %}
 
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            line-height: 1.6;
-        }
-
-        /* Navbar Styling */
-        .navbar {
-            background-color: var(--primary-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar-brand {
-            color: var(--text-color);
-            font-size: 1.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            color: var(--hover-color);
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            font-size: 1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--hover-color);
-        }
-
-        .btn-outline-success {
-            color: var(--hover-color);
-            border-color: var(--hover-color);
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-success:hover {
-            background-color: var(--hover-color);
-            color: white;
-            border-color: var(--hover-color);
-        }
-
-        /* Search Bar */
-        .form-control {
-            border-radius: 20px;
-            border: 1px solid var(--secondary-color);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: border 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--hover-color);
-            box-shadow: 0 0 5px var(--hover-color);
-        }
-
-        /* Card Styling */
-        .card {
-            margin-bottom: 20px;
-        }
-
-        /* Description Section */
-        .card-text {
-            max-height: 150px; /* Fixed height for description */
-            overflow-y: auto;  /* Add vertical scroll */
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .card {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">The Classical World</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/instruments">Instruments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
+{% block body %}
     <!-- Instruments Section -->
     <div class="container mt-5">
         <div class="row">
             {% for instrument in instruments %}
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
+                <div class="col-md-4 d-flex mb-4">
+                    <div class="card" style="width: 18rem; display: flex; flex-direction: column; height: 100%;">
                         {% if instrument.image %}
                             <img src="{{ instrument.image.url }}" class="card-img-top" alt="{{ instrument.title }}">
                         {% endif %}
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ instrument.title }}</h5>
-                            <p class="card-text">{{ instrument.description }}</p>
+                            <!-- Scrollable description -->
+                            <div class="card-text description">
+                                <p>{{ instrument.description }}</p>
+                            </div>
                             <p class="card-text">Price: ${{ instrument.price }}</p>
                             {% if instrument.category %}
                                 <p class="card-text">Category: {{ instrument.category }}</p>
                             {% endif %}
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="/checkout" class="btn btn-primary mt-auto">Order</a>
                         </div>
                     </div>
                 </div>
@@ -161,3 +34,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+{% endblock body %}
