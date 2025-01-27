@@ -32,4 +32,3 @@ admin.site.register(Storeinstruments, StoreinstrumentsAdmin)
 
 
 
-

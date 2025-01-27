@@ -1,40 +1,64 @@
 {% extends "base.html" %}
-{% block title %}Shopping Cart{% endblock title %}
+{% block title %}Home{% endblock title %}
 
 {% block body %}
 
-
     <!-- Image Section -->
     <div class="image-section">
-        <img src="/static/insset.jpg" alt="Musical Instrument">
+        <img src="/static/insset.jpg" alt="Musical Instrument" class="img-fluid w-100">
     </div>
 
     <!-- Content Section -->
-    <div class="content">
+    <div class="content text-center my-5">
         <h2>Discover the Beauty of Musical Instruments</h2>
         <p>Musical instruments have been an integral part of human culture for thousands of years. From string instruments like the violin to percussion instruments like the drums, each one has a unique sound that enhances the beauty of music. Whether you're a musician or a collector, these instruments bring timeless joy and harmony to the world.</p>
     </div>
 
-    <!-- Offers Section -->
-    <div class="offers">
-        <div class="offer-card">
-            <h4>10% Off First Purchase</h4>
-            <p>Get 10% off your first instrument purchase! Join our community today and experience the finest musical instruments.</p>
-            <button class="offer-btn">Claim Offer</button>
-        </div>
-        <div class="offer-card">
-            <h4>Free Shipping on Orders Over $500</h4>
-            <p>Enjoy free shipping when you spend over $500. Get your musical instruments delivered right to your doorstep.</p>
-            <button class="offer-btn">Shop Now</button>
-        </div>
-        <div class="offer-card">
-            <h4>Buy One, Get One 20% Off</h4>
-            <p>Take advantage of our Buy One, Get One 20% Off offer. Perfect for those looking to expand their collection.</p>
-            <button class="offer-btn">Grab the Deal</button>
+    <!-- Features Section -->
+    <div class="features-section container my-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>Wide Variety</h3>
+                <p>Explore an extensive range of instruments from different cultures and genres.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Expert Craftsmanship</h3>
+                <p>Each instrument is carefully crafted to produce the best sound quality.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Community</h3>
+                <p>Join a global network of music enthusiasts and professionals.</p>
+            </div>
         </div>
     </div>
 
+    <!-- Testimonials Section -->
+    <div class="testimonials-section bg-light py-5">
+        <div class="container text-center">
+            <h2>What People Are Saying</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"The variety of instruments here is simply amazing. I've found pieces I couldn't find anywhere else!"</p>
+                        <footer class="blockquote-footer">John Doe, Music Enthusiast</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"Incredible craftsmanship and quality! These instruments are a joy to play."</p>
+                        <footer class="blockquote-footer">Jane Smith, Professional Violinist</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="cta-section text-center py-5">
+        <h2>Ready to Start Your Musical Journey?</h2>
+        <p>Discover your perfect instrument and let the music inspire you.</p>
+        <a href="/instruments" class="btn btn-primary btn-lg">Explore Our Collection</a>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 {% endblock %}
