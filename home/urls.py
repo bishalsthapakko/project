@@ -8,6 +8,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('instruments/', views.instruments, name='instruments'),
     path('checkout/', views.checkout, name='checkout'),
+    
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

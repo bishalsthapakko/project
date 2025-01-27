@@ -21,7 +21,7 @@
                             {% if instrument.category %}
                                 <p class="card-text">Category: {{ instrument.category }}</p>
                             {% endif %}
-                            {% comment %} <a href="/checkout" class="btn btn-primary mt-auto">Order</a> {% endcomment %}
+                            <a href="{% url 'checkout' %}" class="btn btn-primary mt-auto">Order</a>
                         </div>
                     </div>
                 </div>

@@ -171,20 +171,24 @@ def process_checkout(request):
         
     return redirect('view_cart')
 
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Cart, Order
 
+@login_required
 def checkout(request):
-    # Fetch cart items for the logged-in user
-    # cart_items = Cart.objects.filter(user=request.user)
+    cart_items = Cart.objects.filter(user=request.user)
+    subtotal_price = sum(item.product.price * item.quantity for item in cart_items)
+    shipping_price = 100  # Fixed shipping cost
+    total_price = subtotal_price + shipping_price
     
-    # Calculate the total price
-    # total_price = sum(item.product.price * item.quantity for item in cart_items)
-    
-    # Pass cart items and total price to the checkout template
-    return render(request, 'checkout.html')
-    # , {
-    #     'cart_items': cart_items,
-    #     'total_price': total_price,
-    # })
+    context = {
+        'cart_items': cart_items,
+        'subtotal_price': subtotal_price,
+        'shipping_price': shipping_price,
+        'total_price': total_price
+    }
+    return render(request, 'checkout.html', context)
 
 
 def get_cart_item_count(user):
